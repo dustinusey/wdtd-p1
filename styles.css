@@ -264,7 +264,15 @@ main.interests .card {
   position: relative;
   margin-top: 200px;
   opacity: 0;
+}
+.c1 {
   animation: slideUp 1s .5s ease forwards;
+}
+.c2 {
+  animation: slideUp 1s 1s ease forwards;
+}
+.c3 {
+  animation: slideUp 1s 1.5s ease forwards;
 }
 .card .marker {
   border-radius: 50%;
