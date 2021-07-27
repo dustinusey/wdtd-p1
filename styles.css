@@ -1,4 +1,13 @@
 /* Global Layout Set-up */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+:root {
+  --soft-green: rgb(215, 233, 235);
+  --ui: rgb(238, 243, 246);
+}
+
 * { 
   box-sizing: border-box;
 }
@@ -7,9 +16,10 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
-  color: #222;
-  background: #f7f5f0;
+  font-family: 'Inter', sans-serif;
+  /* color: #fff; */
+  background: var(--ui);
+  font-size: 90%;
 }
 /* Link Styles */
 
@@ -17,15 +27,12 @@ a {
   text-decoration: none;
   color: #999;
 }
-a:hover {
-  color: #6633ff;
-}
 
 /* Section Styles */
 
 .main-nav {
   width: 100%;
-  background: black;
+  background: var(--ui);;
   min-height: 30px;
   padding: 10px;
   position: fixed;
@@ -34,7 +41,6 @@ a:hover {
 .nav {
   display: flex;
   justify-content: space-around;
-  font-weight: 700;
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
@@ -43,7 +49,6 @@ a:hover {
 .nav .name {
     display: block;
     margin-right: auto;
-    color: white;
 }
 .nav li {
   padding: 5px 10px 10px 10px;
@@ -52,15 +57,22 @@ a:hover {
   transition: all .5s;
 }
 .nav a:hover {
-  color: white
+  color: black;
 }
 
 header {
   text-align: center;
-  background: url('images/portland.jpg') no-repeat top center ;
+  background: url('images/light-bg.jpeg') no-repeat top center ;
   background-size: cover;
+  background-position:center;
   overflow: hidden;
   padding-top: 60px;
+}
+header.exp-header {
+  background: url('images/exp.jpeg') no-repeat top center ;
+}
+header.interests-header {
+  background: url('images/interests.jpeg') no-repeat top center ;
 }
 header {
   line-height: 1.5;
@@ -70,11 +82,14 @@ header .profile-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 2px solid white;
   transition: all .5s;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0);
 }
 header .profile-image:hover {
-  transform: scale(1.2) rotate(5deg);
+  margin-bottom: 1rem;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.33);
 }
 .tag {
   background-color: #efefef;
@@ -82,11 +97,11 @@ header .profile-image:hover {
   padding: 10px;
   border-radius: 5px;
   display: table;
-  margin: 10px auto;
+  margin: -25px auto 10px;
 } 
 .location {
-  background-color: #222;
-  color: yellow;
+  background-color: #efefef;
+  color: black;
 }
 .card {
   margin: 30px;
@@ -99,25 +114,31 @@ header .profile-image:hover {
   transition: all .5s;
 }
 .card:hover {
-  border-color: #ff99ff;
+  border-color: var(--soft-green);
 }
 
 ul.skills {
   padding: 0;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .skills li {
-  border-radius: 6px;
+  border-radius: 3px;
   display: inline-block;
-  background: #ff9904;
-  color: white;
-  padding: 5px 10px;
+  background: var(--soft-green);
+  color: black;
+  padding: 10px;
   margin: 2px;
+  /* width: 100%; */
+  text-align: center;
 }
 
 .skills li:nth-child(odd) {
-  background: #0399ff;
+  background: #e9eef0;
 }
 
 footer {
@@ -135,6 +156,7 @@ footer ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  font-size: 2rem;
 }
 
 footer ul li {
@@ -143,7 +165,7 @@ footer ul li {
 
 a.social {
   display: inline-block;
-  text-indent: -9999px;
+  /* text-indent: -9999px; */
   margin-left: 5px;
   width: 30px;
   height: 30px;
@@ -151,21 +173,111 @@ a.social {
   opacity: .4;
   transition: all .5s;
 }
-a.twitter {
-  background-image: url(images/twitter.svg);
-}
-a.linkedin {
-  background-image: url(images/linkedin.svg);
-}
-a.github {
-  background-image: url(images/github.svg);
+a.social:visited {
+  color: rgb(151, 180, 183);
 }
 a.social:hover {
   opacity: 1;
+  color: rgb(128, 142, 144);
 }
 .clearfix {
   clear: both;
 }
+
+/* experience page */
+main.experience {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 1rem;
+  border-top: 2px solid rgba(74, 152, 164, 0.397);
+  /* border-bottom: 2px solid rgba(74, 152, 164, 0.397); */
+  margin-top: 3rem;
+}
+.card-container .exp-card {
+  max-width: none;
+  width: 100%;
+  background: white;
+  padding: .80rem;
+  margin: .5rem;
+  transition: .4s;
+  min-height: 7.5rem;
+  text-align: center;
+  /* structure */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+.card-container .exp-card:hover {
+  /* box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.05); */
+}
+.exp-card p, .exp-card button {
+  margin: auto;
+}
+.exp-card button {
+  font-size: .85rem;
+  padding: .8rem;
+  border-radius: .15rem;
+  border: none;
+  cursor: pointer;
+  margin-top:1.25rem;
+  transition: .3s ease;
+}
+.exp-card:hover button {
+  background: var(--soft-green);
+}
+.exp-card button:hover {
+  transform: scale(1.1);
+  background: rgb(199, 232, 235);
+
+}
+
+
+/* interests */
+main.interests {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+main.interests .card {
+  max-width: none;
+  width: 100%;
+  margin: 1rem;
+  position: relative;
+}
+.card .marker {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  background: var(--soft-green);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.interests .card h2 {
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--soft-green);
+}
+
 
 /* Styles for larger screens */
 @media screen and (min-width: 720px) {
@@ -193,6 +305,7 @@ a.social:hover {
     padding-top: 20px;
   }
 
+  
   main p {
     line-height: 1.6em;
   }
@@ -203,5 +316,18 @@ a.social:hover {
     margin: 40px auto;
   }
 
+  /* experience */
+
+  .card-container > * {
+		flex: 1 1 23%;
+	}
+  
+
+}
+
+@media screen and (min-width: 1024px) {
+  main.interests > * {
+    flex: 1 1 25%;
+  }
 }
 
