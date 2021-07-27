@@ -262,6 +262,9 @@ main.interests .card {
   width: 100%;
   margin: 1rem;
   position: relative;
+  margin-top: 200px;
+  opacity: 0;
+  animation: slideUp 1s .5s ease forwards;
 }
 .card .marker {
   border-radius: 50%;
@@ -276,6 +279,19 @@ main.interests .card {
   text-align: center;
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--soft-green);
+}
+
+
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    margin-top: 200px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 1.5rem;
+  }
 }
 
 
