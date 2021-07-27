@@ -266,13 +266,13 @@ main.interests .card {
   opacity: 0;
 }
 .c1 {
-  animation: slideUp 1s .5s ease forwards;
+  animation: slideUp 2s .25s ease forwards;
 }
 .c2 {
-  animation: slideUp 1s 1s ease forwards;
+  animation: slideUp 2s .75s ease forwards;
 }
 .c3 {
-  animation: slideUp 1s 1.5s ease forwards;
+  animation: slideUp 2s 1s ease forwards;
 }
 .card .marker {
   border-radius: 50%;
